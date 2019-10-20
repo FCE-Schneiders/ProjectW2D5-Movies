@@ -1,0 +1,25 @@
+body {
+    background-color:#070f1f;
+}
+
+h1 {
+    text-align: center;
+    color:#00d65f;
+    font-size: 3rem ;
+}
+
+.radioButtons  {
+    text-align: center;
+    color: #00d65f;
+    font-size: 2rem;
+}
+#poster{
+    width: 10%;
+    height: 10%;
+    display: inline;
+}
+
+#selectedMovies{
+    color: white;
+    font-size: 1 rem;
+}

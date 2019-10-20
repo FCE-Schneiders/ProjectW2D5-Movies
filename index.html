@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Project</title>
+    <title>Filmzoeker</title>
+    <link rel="stylesheet" href="index.css">
 </head>
-
-<body>
+<!--zorg dat de pagina gelaad wordt met films hoe doe ik dat?-->
+<body onload="showAllMovies();">
     <h1> FILMZOEKER </h1>
     <!--
 5 radiobuttons;
@@ -24,21 +26,23 @@ radiobutton Princess Films
 radiobutton Batman Films
 
     -->
-<div>
-<input type="radio" name="NieuwsteFilms" id="NieuwsteFilms"> Nieuwste Films
-<input type="radio" name="AvengersFilms" id="AvengersFilms"> Avengers Films
-<input type="radio" name="X-MenFilms" id="X-MenFilms"> X-Men Films
-<input type="radio" name="PrincessFilms" id="PrincessFilms"> Princess Films
-<input type="radio" name="BatmanFilms" id="BatmanFilms" > Batman Films 
+    <!-- om niet er voor te zorgen dat 1 button tegelijk aangeklikt kan worden => naam van name hetzelfde houden-->
+    <div class="radioButtons">
+        <input type="radio" name=films id="NieuwsteFilms" onclick="showNieuwsteFilms()"> Nieuwste Films
+        <input type="radio" name=films id="AvengersFilms" onclick="showAvengers()"> Avengers Films
+        <input type="radio" name=films id="X-MenFilms" onclick="showXMenFilms()"> X-Men Films
+        <input type="radio" name=films id="PrincessFilms" onclick="showPrincessFilms()"> Princess Films
+        <input type="radio" name=films id="BatmanFilms" onclick="showBatmanFilms()"> Batman Films
 
-</div>
+    </div>
+
+    
+
+    <div id='selectedMovies'>
        
-<button onclick='giveMovieList()'>Klik voor een lijst van de films (test)</button>
-
-<div id='diffilms'>
-
-</div>
+    </div>
 
     <script type='text/javascript' src='project2.js'></script>
 </body>
+
 </html>

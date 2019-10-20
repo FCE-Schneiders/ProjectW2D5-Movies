@@ -246,18 +246,88 @@ const dataBaseMovies = [
       "Poster": "https://m.media-amazon.com/images/M/MV5BOTdkYjA4YzAtMjNiZS00OTgyLTg5Y2ItNGIwZGQyMTUzNzFiXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg"
     }
   ]
+
+  const allMovies = dataBaseMovies.map((movie) => {
+    return movie
+  })
+  console.log(allMovies)
+ 
+
+  function showAllMovies (){
+    document.getElementById ("selectedMovies").innerHTML= "";
+    for (let index = 0; index < allMovies.length; index++) {
+     // document.getElementById ("selectedMovies").innerHTML+=  allMovies[index].Title +"<br/>"
+     document.getElementById ("selectedMovies").innerHTML+= "<a href=https://www.imdb.com/title/"+ allMovies[index].imdbID  + " target=_blank><img id=poster src=" + allMovies[index].Poster +"/></a>" 
+    }
+  }
+
+  //Nieuwste Films >= 2014
   const findFiveYearOld = dataBaseMovies.filter((movie) => {
     return movie.Year >= "2014"
+    
   })
   console.log (findFiveYearOld);
 
-    /*function check() {
-      document.getElementById("NieuwsteFilms").checked = true;
+  const nameFiveYearOld = findFiveYearOld.map((movie) => {
+    return movie.Title 
+  })
+  console.log(nameFiveYearOld);
+
+  function showNieuwsteFilms() {
+    document.getElementById ("selectedMovies").innerHTML= "";
+    for (let index = 0; index < findFiveYearOld.length; index++) {
+     // document.getElementById ("selectedMovies").innerHTML+=  findFiveYearOld[index].Title +"<br/>"
+     document.getElementById ("selectedMovies").innerHTML+= "<a href=https://www.imdb.com/title/"+ findFiveYearOld[index].imdbID  + " target=_blank><img id=poster src=" + findFiveYearOld[index].Poster +"/></a>"  + findFiveYearOld[index].Title 
     }
-    
-    function uncheck() {
-      document.getElementById("NieuwsteFilms").checked = false;
+   }
+
+  //Als gebruiker wil ik kunnen filteren op films met "Avengers" in de titel.  
+  let avengers = dataBaseMovies.filter((movie) =>{
+    return movie.Title.includes("Avengers");
+  }) 
+  console.log(avengers);
+
+  function showAvengers() {
+    document.getElementById ("selectedMovies").innerHTML= "";
+    for (let index = 0; index < avengers.length; index++) {
+     document.getElementById ("selectedMovies").innerHTML+= "<a href=https://www.imdb.com/title/"+ avengers[index].imdbID + " target=_blank><img id=poster src=" + avengers[index].Poster +"/></a>"  + avengers[index].Title 
     }
-function giveMovieList(){
-    document.getElementById('diffilms').innerHTML=dataBaseMovies[0].Title
-}*/
+  }
+  //Als gebruiker wil ik kunnen filteren op films met "X-Men" in de titel.  
+  let xMen = dataBaseMovies.filter((movie) =>{
+    return movie.Title.includes("X-Men");
+  }) 
+  console.log(xMen);
+
+  function showXMenFilms(){
+    document.getElementById ("selectedMovies").innerHTML= "";
+    for (let index = 0; index < xMen.length; index++) {
+    document.getElementById ("selectedMovies").innerHTML+= "<a href=https://www.imdb.com/title/" + xMen[index].imdbID + " target=_blank><img id=poster src=" + xMen[index].Poster +"/></a>"  + xMen[index].Title 
+  }
+}
+//Als gebruiker wil ik kunnen filteren op films met "Princess" in de titel.  
+
+let princess = dataBaseMovies.filter((movie) =>{
+  return movie.Title.includes("Princess");
+  }) 
+  console.log(princess);
+
+  function showPrincessFilms (){
+    document.getElementById ("selectedMovies").innerHTML= "";
+    for (let index=0; index < princess.length; index++){
+      document.getElementById("selectedMovies").innerHTML += "<a href=https://www.imdb.com/title/" + princess[index].imdbID +" target=_blank ><img id=poster src=" + princess[index].Poster +"/></a>"  + princess[index].Title 
+    }
+  }
+
+  let batman = dataBaseMovies.filter ((movie)=>{
+    return movie.Title.includes("Batman");
+  })
+  console.log(batman);
+
+  function showBatmanFilms (){
+    document.getElementById ("selectedMovies").innerHTML= "";
+    for (let index=0; index < batman.length; index++){
+      document.getElementById("selectedMovies").innerHTML +="<a href=https://www.imdb.com/title/" + batman[index].imdbID + "target=_blank ><img id=poster src=" + batman[index].Poster +"/></a>"  + batman[index].Title 
+  }
+}
+  
